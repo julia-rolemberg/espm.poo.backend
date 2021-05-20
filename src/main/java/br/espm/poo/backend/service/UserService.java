@@ -34,6 +34,12 @@ public class UserService {
         return userRepository.save(new UserModel(user)).to();
     }
 
+    public List<UserBean> listByName(String name){
+        return userRepository.listByUserName(name)
+                .stream().map(UserModel::to)
+                .collect(Collectors.toList());
+    }
+
     public void delete(UUID id) {
         userRepository.deleteById(id.toString());
     }

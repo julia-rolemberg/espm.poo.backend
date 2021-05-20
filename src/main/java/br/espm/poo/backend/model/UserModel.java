@@ -10,7 +10,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name="users")
-public class UserModel {
+public class UserModel { //representa o banco de dados
 
     @Id
     private String idUsers;

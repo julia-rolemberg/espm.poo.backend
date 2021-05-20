@@ -46,6 +46,11 @@ public class UserResource {
                .toUri();
        return ResponseEntity.created(location).build();
     }
+    @GetMapping(path = "users/name/{name}")
+    public List<UserBean> listByName(@PathVariable String name){
+        return userService.listByName(name);
+    }
+
 
     @DeleteMapping(path = "/users/{id}")
     public void deleteBy(@PathVariable UUID id) {
